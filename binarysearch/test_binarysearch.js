@@ -1,7 +1,5 @@
 import { binarySearch } from "./binarysearch.js";
 
-// Import the binarysearch function from binarysearch.js
-
 // Test for numbers
 const numbers = [1, 2, 3, 4, 5];
 const numberToFind = 3;
