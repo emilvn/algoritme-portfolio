@@ -1,1 +1,1 @@
-#Â Algorithm portfolio
+# Algorithm portfolio
