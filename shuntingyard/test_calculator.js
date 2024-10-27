@@ -2,6 +2,7 @@ import expressionCalculator from "./calculator.js";
 import Queue from "./queue.js";
 
 const inputQueue = new Queue();
+// (2 + 3) * 4 - 5 / (1 + 1)
 inputQueue.enqueue("(");
 inputQueue.enqueue(2);
 inputQueue.enqueue("+");
