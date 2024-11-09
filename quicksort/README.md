@@ -49,3 +49,9 @@ Jeg har brugt `Hoare partition scheme`_(opkaldt efter Tony Hoare som opfandt qui
 
 - **Worst case**: `O(n^2)`  
   Hvis vi vælger en dårlig pivot, så vi deler arrayet i to dele hvor den ene del er tom, så vil vi have en tidskompleksitet på `O(n^2)`, da vi vil have `n` rekursive kald og `n` operationer for hvert kald. Da vi vælger første element som pivot, vil dette ske hvis arrayet allerede er sorteret.
+
+## Andre ressourcer
+
+https://www.youtube.com/watch?v=pJgKYn0lcno&ab_channel=TuringAwardeeClips
+
+https://www.youtube.com/watch?v=B85z-x66KT4&ab_channel=MarcNathanielValeros
