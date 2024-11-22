@@ -58,5 +58,7 @@ function partition(arr, low, high) {
     }
     // if we get here, arr[low] >= pivot and arr[high] <= pivot, so we swap them
     swap(low, high, arr);
+    low++;
+    high--;
   }
 }
