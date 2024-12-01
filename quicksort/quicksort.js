@@ -1,3 +1,5 @@
+let iterations = 0;
+
 /**
  * sorts an array in place using quicksort algorithm, and returns it
  * @param {any[]} arr array to sort
@@ -16,6 +18,7 @@ export function quickSort(arr) {
  * @returns {any[]}
  */
 function _quickSort(arr, low, high) {
+  iterations++;
   if (low >= 0 && high >= 0 && low < high) {
     const pivot = partition(arr, low, high);
     _quickSort(arr, low, pivot);
@@ -29,8 +32,6 @@ function _quickSort(arr, low, high) {
  * @param {any[]} arr
  */
 function swap(i, j, arr) {
-  console.log("swap", "low", arr[i], "high", arr[j]);
-
   const tmp = arr[i];
   arr[i] = arr[j];
   arr[j] = tmp;
@@ -47,10 +48,16 @@ function partition(arr, low, high) {
   const pivot = arr[low];
   while (true) {
     // while element to the left of pivot is less than pivot, move right
-    while (arr[low] < pivot) low++;
+    while (arr[low] < pivot) {
+      iterations++;
+      low++;
+    }
 
     // while element to the right of pivot is greater than pivot, move left
-    while (arr[high] > pivot) high--;
+    while (arr[high] > pivot) {
+      iterations++;
+      high--;
+    }
 
     // If the indices crossed, return
     if (low >= high) {
@@ -61,4 +68,8 @@ function partition(arr, low, high) {
     low++;
     high--;
   }
+}
+
+export function getIterations() {
+  return iterations;
 }

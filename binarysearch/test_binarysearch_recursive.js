@@ -1,12 +1,18 @@
-import { binarySearchRecursive as binarySearch } from "./binarysearch_recursive.js";
+import {
+  binarySearchRecursive as binarySearch,
+  getIterations,
+  resetIterations,
+} from "./binarysearch_recursive.js";
 
 // Test for numbers
 const numbers = [1, 2, 3, 4, 5];
 const numberToFind = 3;
 const numberIndex = binarySearch(numberToFind, numbers, 0, numbers.length - 1);
 console.log(
-  `Index of ${numberToFind} in numbers:\nFound ${numberIndex} Exptected 2\n`
+  `Index of ${numberToFind} in numbers:\nFound ${numberIndex} Exptected 2`
 );
+console.log("iterations:", getIterations(), "\n");
+resetIterations();
 
 const numberToFind2 = 6;
 const numberIndex2 = binarySearch(
@@ -16,16 +22,20 @@ const numberIndex2 = binarySearch(
   numbers.length - 1
 );
 console.log(
-  `Index of ${numberToFind2} in numbers:\nFound ${numberIndex2} expected -1\n`
+  `Index of ${numberToFind2} in numbers:\nFound ${numberIndex2} expected -1`
 );
+console.log("iterations:", getIterations(), "\n");
+resetIterations();
 
 // Test for strings
 const strings = ["apple", "banana", "cherry", "date", "elderberry"];
 const stringToFind = "cherry";
 const stringIndex = binarySearch(stringToFind, strings, 0, strings.length - 1);
 console.log(
-  `Index of ${stringToFind} in strings:\nFound ${stringIndex} Exptected 2\n`
+  `Index of ${stringToFind} in strings:\nFound ${stringIndex} Exptected 2`
 );
+console.log("iterations:", getIterations(), "\n");
+resetIterations();
 
 const stringToFind2 = "grape";
 const stringIndex2 = binarySearch(
@@ -35,8 +45,10 @@ const stringIndex2 = binarySearch(
   strings.length - 1
 );
 console.log(
-  `Index of ${stringToFind2} in strings:\nFound ${stringIndex2} Exptected -1\n`
+  `Index of ${stringToFind2} in strings:\nFound ${stringIndex2} Exptected -1`
 );
+console.log("iterations:", getIterations(), "\n");
+resetIterations();
 
 const stringToFind3 = "apple";
 const stringIndex3 = binarySearch(
@@ -46,8 +58,10 @@ const stringIndex3 = binarySearch(
   strings.length - 1
 );
 console.log(
-  `Index of ${stringToFind3} in strings:\nFound ${stringIndex3} Exptected 0\n`
+  `Index of ${stringToFind3} in strings:\nFound ${stringIndex3} Exptected 0`
 );
+console.log("iterations:", getIterations(), "\n");
+resetIterations();
 
 // Test for objects
 function compareObj(a, b) {
@@ -68,8 +82,10 @@ const objectIndex = binarySearch(
   compareObj
 );
 console.log(
-  `Index of object with name ${objectToFind.name} in objects:\nFound ${objectIndex} Exptected 0\n`
+  `Index of object with name ${objectToFind.name} in objects:\nFound ${objectIndex} Exptected 0`
 );
+console.log("iterations:", getIterations(), "\n");
+resetIterations();
 
 const objectToFind2 = { id: 5, name: "Charlie" };
 const objectIndex2 = binarySearch(
@@ -80,8 +96,10 @@ const objectIndex2 = binarySearch(
   compareObj
 );
 console.log(
-  `Index of object with name ${objectToFind2.name} in objects:\nFound ${objectIndex2} Exptected -1\n`
+  `Index of object with name ${objectToFind2.name} in objects:\nFound ${objectIndex2} Exptected -1`
 );
+console.log("iterations:", getIterations(), "\n");
+resetIterations();
 
 const objectToFind3 = { id: 4, name: "John" };
 const objectIndex3 = binarySearch(
@@ -92,5 +110,7 @@ const objectIndex3 = binarySearch(
   compareObj
 );
 console.log(
-  `Index of object with name ${objectToFind3.name} in objects:\nFound ${objectIndex3} Exptected 3\n`
+  `Index of object with name ${objectToFind3.name} in objects:\nFound ${objectIndex3} Exptected 3`
 );
+console.log("iterations:", getIterations(), "\n");
+resetIterations();

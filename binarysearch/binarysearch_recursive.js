@@ -1,3 +1,4 @@
+let iterations = 0;
 /**
  * Function to find index of element in sorted array of elements, using binary search
  * @param {T} search element to search for
@@ -9,6 +10,7 @@
  * @returns {number} index of element, or -1 if not found
  */
 export function binarySearchRecursive(search, values, start, end, comparefunc) {
+  iterations++;
   if (start > end) return -1;
   if (!comparefunc) {
     comparefunc = (a, b) => {
@@ -30,4 +32,12 @@ export function binarySearchRecursive(search, values, start, end, comparefunc) {
     return binarySearchRecursive(search, values, start, end - 1, comparefunc);
   }
   return binarySearchRecursive(search, values, mid + 1, end, comparefunc);
+}
+
+export function getIterations() {
+  return iterations;
+}
+
+export function resetIterations() {
+  iterations = 0;
 }

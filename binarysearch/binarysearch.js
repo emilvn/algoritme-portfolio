@@ -1,3 +1,4 @@
+let iterations = 0;
 /**
  * Function to find index of element in sorted array of elements, using binary search
  * @param {T} search element to search for
@@ -20,6 +21,7 @@ export function binarySearch(search, values, comparefunc) {
   let min = 0;
 
   while (max >= min) {
+    iterations++;
     const mid = Math.floor((max + min) / 2);
     const c = comparefunc(values[mid], search);
 
@@ -33,4 +35,12 @@ export function binarySearch(search, values, comparefunc) {
     }
   }
   return -1;
+}
+
+export function getIterations() {
+  return iterations;
+}
+
+export function resetIterations() {
+  iterations = 0;
 }

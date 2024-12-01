@@ -1,3 +1,4 @@
+let shiftIterations = 0;
 /**
  *
  * @param {any[]} arr
@@ -11,6 +12,7 @@ export function insertionSortShift(arr) {
     }
     let j = i;
     while (arr[j - 1] > cur && j > 0) {
+      shiftIterations++;
       arr[j] = arr[--j];
     }
     arr[j] = cur;
@@ -19,6 +21,7 @@ export function insertionSortShift(arr) {
   return arr;
 }
 
+let swapIterations = 0;
 /**
  *
  * @param {any[]} arr
@@ -28,10 +31,19 @@ export function insertionSortSwap(arr) {
   for (let i = 1; i < arr.length; i++) {
     let j = i;
     while (j > 0 && arr[j - 1] > arr[j]) {
+      swapIterations++;
       const tmp = arr[j];
       arr[j] = arr[--j];
       arr[j] = tmp;
     }
   }
   return arr;
+}
+
+export function getShiftIterations() {
+  return shiftIterations;
+}
+
+export function getSwapIterations() {
+  return swapIterations;
 }
